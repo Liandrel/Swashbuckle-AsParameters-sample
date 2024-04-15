@@ -16,10 +16,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/test", ([FromQuery] ConditionState conditionStateFromQuery,
+app.MapGet("/test", ([FromQuery] ConditionState? ConditionStateFromQuery,
                      [AsParameters] RequestModel model) =>
 {
-    return $"{conditionStateFromQuery}, {model.conditionStateAsParameters}";
+    return $"{ConditionStateFromQuery}, {model.ConditionStateAsParameters}";
 });
 
 app.Run();
